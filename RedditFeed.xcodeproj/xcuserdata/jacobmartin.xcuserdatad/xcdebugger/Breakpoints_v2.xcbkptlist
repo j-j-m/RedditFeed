@@ -14,42 +14,10 @@
             filePath = "RedditFeed/RedditFeed.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "loadPosts()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6B58B5BB-84BC-4CDE-9D5F-5162B64F3D7F - 9f7f76f149042159"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for RedditFeed.RedditAPI.loadPosts() async throws -&gt; Swift.Array&lt;RedditFeed.RedditFeed.State.Post&gt;"
-                  moduleName = "RedditFeed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jacobmartin/Desktop/RedditFeed/RedditFeed/RedditFeed.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "444">
-               </Location>
-               <Location
-                  uuid = "6B58B5BB-84BC-4CDE-9D5F-5162B64F3D7F - 1d4049ef89978ec8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RedditFeed.RedditResponse.RedditData.RedditChild) -&gt; Swift.Optional&lt;RedditFeed.RedditFeed.State.Post&gt; in RedditFeed.RedditAPI.loadPosts() async throws -&gt; Swift.Array&lt;RedditFeed.RedditFeed.State.Post&gt;"
-                  moduleName = "RedditFeed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jacobmartin/Desktop/RedditFeed/RedditFeed/RedditFeed.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "564">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

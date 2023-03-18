@@ -4,21 +4,12 @@ import ComposableArchitecture
 public struct RedditFeed: ReducerProtocol {
 
     public struct State: Equatable {
-        public var posts: [Post] = []
-
-        public struct Post: Equatable {
-            public let id: String
-            public let title: String
-            public let author: String
-            public let date: Date
-            public let upvotes: Int
-            public let comments: Int
-        }
+        public var posts: [RedditPost] = []
     }
 
     public enum Action: Equatable {
         case loadPosts
-        case postsLoaded([State.Post])
+        case postsLoaded([RedditPost])
         case postsError(String)
     }
 
@@ -51,21 +42,9 @@ public struct RedditView: View {
     public var body: some View {
         WithViewStore(store) { viewStore in
             NavigationView {
-                List(viewStore.state.posts, id: \.id) { post in
-                    VStack(alignment: .leading) {
-                        Text(post.title)
-                            .font(.headline)
-                        Text("By \(post.author) on \(post.date)")
-                            .font(.subheadline)
-                        HStack {
-                            Text("\(post.upvotes) upvotes")
-                                .font(.caption)
-                            Text("\(post.comments) comments")
-                                .font(.caption)
-                        }
-                    }
+                List(viewStore.state.posts) { post in
+                    RedditFeedListItemView(post: post)
                 }
-//                .navigationBarTitle("Reddit Feed")
             }
             .onAppear {
                 viewStore.send(.loadPosts)
@@ -75,7 +54,7 @@ public struct RedditView: View {
 }
 
 public struct RedditAPI {
-    public func loadPosts() async throws -> [RedditFeed.State.Post] {
+    public func loadPosts() async throws -> [RedditPost] {
         let url = URL(string: "https://www.reddit.com/r/swift.json")!
 
         let (data, _) = try await URLSession.shared.data(from: url)
@@ -85,17 +64,7 @@ public struct RedditAPI {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
         let response = try decoder.decode(RedditResponse.self, from: data)
-        let posts = response.data.children.compactMap { child -> RedditFeed.State.Post? in
-            guard let createdUtc = child.data.createdUtc else { return nil }
-            return RedditFeed.State.Post(
-                id: child.data.id,
-                title: child.data.title,
-                author: child.data.author,
-                date: createdUtc,
-                upvotes: child.data.ups,
-                comments: child.data.numComments ?? 0
-            )
-        }
+        let posts = response.data.children.map(\.data)
 
         return posts
     }
@@ -113,11 +82,13 @@ public struct RedditResponse: Codable {
     }
 }
 
-public struct RedditPost: Codable {
+public struct RedditPost: Identifiable, Equatable, Codable {
     public let id: String
     public let title: String
     public let author: String
-    public let createdUtc: Date?
     public let ups: Int
-    public let numComments: Int?
+    public let numComments: Int
+    public let createdUtc: Date?
+    public let thumbnail: URL?
 }
+

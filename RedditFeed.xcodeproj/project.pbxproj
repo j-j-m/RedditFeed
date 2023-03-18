@@ -13,6 +13,9 @@
 		A0A36C9229C5588B00EE7D0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A36C9129C5588B00EE7D0A /* Preview Assets.xcassets */; };
 		A0A36C9A29C558C800EE7D0A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A0A36C9929C558C800EE7D0A /* ComposableArchitecture */; };
 		A0A36C9C29C558E500EE7D0A /* RedditFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A36C9B29C558E500EE7D0A /* RedditFeed.swift */; };
+		A0A36CA129C5791800EE7D0A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A36CA029C5791800EE7D0A /* File.swift */; };
+		A0A36CA429C57AE600EE7D0A /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = A0A36CA329C57AE600EE7D0A /* Nuke */; };
+		A0A36CA729C57B1800EE7D0A /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = A0A36CA629C57B1800EE7D0A /* NukeUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,7 @@
 		A0A36C8F29C5588B00EE7D0A /* RedditFeed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RedditFeed.entitlements; sourceTree = "<group>"; };
 		A0A36C9129C5588B00EE7D0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0A36C9B29C558E500EE7D0A /* RedditFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditFeed.swift; sourceTree = "<group>"; };
+		A0A36CA029C5791800EE7D0A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +34,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A36CA729C57B1800EE7D0A /* NukeUI in Frameworks */,
 				A0A36C9A29C558C800EE7D0A /* ComposableArchitecture in Frameworks */,
+				A0A36CA429C57AE600EE7D0A /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +48,7 @@
 			children = (
 				A0A36C8829C5588A00EE7D0A /* RedditFeed */,
 				A0A36C8729C5588A00EE7D0A /* Products */,
+				A0A36CA529C57B1800EE7D0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +66,7 @@
 				A0A36C8929C5588A00EE7D0A /* RedditFeedApp.swift */,
 				A0A36C8B29C5588A00EE7D0A /* ContentView.swift */,
 				A0A36C9B29C558E500EE7D0A /* RedditFeed.swift */,
+				A0A36CA029C5791800EE7D0A /* File.swift */,
 				A0A36C8D29C5588B00EE7D0A /* Assets.xcassets */,
 				A0A36C8F29C5588B00EE7D0A /* RedditFeed.entitlements */,
 				A0A36C9029C5588B00EE7D0A /* Preview Content */,
@@ -72,6 +80,13 @@
 				A0A36C9129C5588B00EE7D0A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0A36CA529C57B1800EE7D0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +107,8 @@
 			name = RedditFeed;
 			packageProductDependencies = (
 				A0A36C9929C558C800EE7D0A /* ComposableArchitecture */,
+				A0A36CA329C57AE600EE7D0A /* Nuke */,
+				A0A36CA629C57B1800EE7D0A /* NukeUI */,
 			);
 			productName = RedditFeed;
 			productReference = A0A36C8629C5588A00EE7D0A /* RedditFeed.app */;
@@ -123,6 +140,7 @@
 			mainGroup = A0A36C7D29C5588A00EE7D0A;
 			packageReferences = (
 				A0A36C9829C558C800EE7D0A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				A0A36CA229C57AE600EE7D0A /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = A0A36C8729C5588A00EE7D0A /* Products */;
 			projectDirPath = "";
@@ -151,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0A36C8C29C5588A00EE7D0A /* ContentView.swift in Sources */,
+				A0A36CA129C5791800EE7D0A /* File.swift in Sources */,
 				A0A36C9C29C558E500EE7D0A /* RedditFeed.swift in Sources */,
 				A0A36C8A29C5588A00EE7D0A /* RedditFeedApp.swift in Sources */,
 			);
@@ -376,6 +395,14 @@
 				minimumVersion = 0.9.0;
 			};
 		};
+		A0A36CA229C57AE600EE7D0A /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -383,6 +410,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A0A36C9829C558C800EE7D0A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		A0A36CA329C57AE600EE7D0A /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0A36CA229C57AE600EE7D0A /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		A0A36CA629C57B1800EE7D0A /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0A36CA229C57AE600EE7D0A /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
